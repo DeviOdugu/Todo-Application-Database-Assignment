@@ -1,0 +1,111 @@
+//API 1
+//Scenario 1: Returns a list of all todos whose status is 'TO DO'
+GET http://localhost:3000/todos/?status=TO DO
+###
+
+//Scenario 2: Returns a list of all todos whose priority is 'HIGH'
+GET http://localhost:3000/todos/?priority=HIGH
+###
+
+//Scenario 3: Returns a list of all todos whose priority is 'HIGH' and status is 'IN PROGRESS'
+GET http://localhost:3000/todos/?priority=HIGH&status=IN PROGRESS
+###
+
+//Scenario 4: Returns a list of all todos whose todo contains 'Buy' text
+GET http://localhost:3000/todos/?search_q=Buy
+###
+
+//Scenario 5: Returns a list of all todos whose category is 'WORK' and status is 'DONE'
+GET http://localhost:3000/todos/?category=WORK&status=DONE
+###
+
+//Scenario 6: Returns a list of all todos whose category is 'HOME'
+GET http://localhost:3000/todos/?category=OME
+###
+
+//Scenario 7: Returns a list of all todos whose category is 'LEARNING' and priority is 'HIGH'
+GET http://localhost:3000/todos/?category=LEARNING&priority=HIGH
+###
+
+
+
+
+//API 2: Returns a specific todo based on the todo ID
+GET http://localhost:3000/todos/1/
+###
+
+
+
+
+//API 3: Returns a list of all todos with a specific due date in the query parameter `/agenda/?date=2021-12-12`
+GET http://localhost:3000/agenda/?date=2021-12-12
+###
+
+
+
+//API 4: Create a todo in the todo table
+POST http://localhost:3000/todos/
+Content-Type: application/json
+
+{
+  "id": 6,
+  "todo": "Finalize event theme",
+  "priority": "LOW",
+  "status": "TO DO",
+  "category": "HOME",
+  "dueDate": "2021-02-22"
+}
+###
+
+
+
+//API 5: Updates the details of a specific todo based on the todo ID
+//Scenario 1:
+PUT http://localhost:3000/todos/1/ 
+Content-Type: application/json
+
+{
+      "status": "DONE"
+}
+###
+
+//Scenario 2:
+PUT http://localhost:3000/todos/2/ 
+Content-Type: application/json
+
+{
+      "priority": "HIGH"
+}
+###
+
+//Scenario 3:
+PUT http://localhost:3000/todos/2/ 
+Content-Type: application/json
+
+{
+      "todo": "Clean the garden"
+}
+###
+
+//Scenario 4:
+PUT http://localhost:3000/todos/2/ 
+Content-Type: application/json
+
+{
+      "category": "LEARNING"
+}
+###
+
+//Scenario 4:
+PUT http://localhost:3000/todos/2/ 
+Content-Type: application/json
+
+{
+      "dueDate": "2021-01-12"
+}
+###
+
+
+
+//API 6: Deletes a todo from the todo table based on the todo ID
+DELETE http://localhost:3000/todos/3/
